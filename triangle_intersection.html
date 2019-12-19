@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Triangle Canvas Example</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500"></canvas>
+
+    <script>
+var canvasElement = document.querySelector("#myCanvas");
+var context = canvasElement.getContext("2d");
+
+var x = [75, 100, 300, 0, 200, 250];
+var y = [18, 300, 300, 200, 350, 200];
+
+xshift = x[0];
+yshift = y[0];
+for(var i = 0; i < x.length; i++) {
+	x[i]  = x[i] - xshift;
+	y[i]  = y[i] - yshift;
+}
+
+
+tetha1 = Math.atan2(y[2], x[2]);
+
+for(var i = 0; i < x.length; i++) {
+  let X = x[i];
+  let Y = y[i];
+	x[i]  = X*Math.cos(tetha1) + Y*Math.sin(tetha1);
+	y[i]  = -X*Math.sin(tetha1) + Y*Math.cos(tetha1);
+}
+
+
+tetha2 = Math.atan2(y[1], x[1]);
+tetha = tetha2; //Math.abs(tetha2*(-1.1); //);
+//*
+for(var i = 0; i < x.length; i++) {
+	x[i]  = x[i] - y[i]*(1 / Math.tan(tetha));
+	y[i]  = y[i]*(1 / Math.sin(tetha));
+}
+//*/
+
+/*
+for(var i = 0; i < x.length; i++) {
+	x[i]  = x[i] + y[i]*Math.cos(tetha);
+	y[i]  = y[i]*Math.sin(tetha);
+}
+//*/
+
+
+for(var i = 0; i < x.length; i++) {
+	x[i]  = x[i]/2 + 200;
+	y[i]  = y[i]/2 + 200;
+}
+
+// the triangle
+context.beginPath();
+context.moveTo(x[0], y[0]);
+context.lineTo(x[1], y[1]);
+context.lineTo(x[2], y[2]);
+context.closePath();
+
+// the outline
+context.lineWidth = 10;
+context.strokeStyle = '#666666';
+context.stroke();
+
+// the fill color
+context.fillStyle = "#FFCC00";
+context.fill();
+
+context.beginPath();
+context.moveTo(x[3], y[3]);
+context.lineTo(x[4], y[4]);
+context.lineTo(x[5], y[5]);
+context.closePath();
+
+// the outline
+context.lineWidth = 5;
+context.strokeStyle = '#666666';
+context.stroke();
+
+
+
+    </script>
+
+</body>
+</html>
