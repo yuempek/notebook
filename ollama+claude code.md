@@ -93,9 +93,3 @@ If everything is configured correctly, Claude should now run via Ollama.
 * Restart your terminal after modifying environment variables
 * Ensure Git is installed before using Claude integration
 * Verify Ollama service is running if launch fails
-
-
-If you want, I can also:
-- add badges (Windows / CLI / AI stack)
-- turn this into a one-click `.ps1` installer
-- or structure it as a full GitHub project template (with scripts folder, config, etc.)
