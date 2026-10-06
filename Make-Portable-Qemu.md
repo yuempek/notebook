@@ -63,6 +63,15 @@ qemu-system-x86_64.exe ^
   -netdev user,id=net0 ^
   -device virtio-net-pci,netdev=net0
 ```
+With +SSH forwarding :
+
+```cmd
+qemu-system-x86_64.exe  ^
+   -m 2G ^
+   -drive file=disk.qcow2,format=qcow2  ^
+   -netdev user,id=net0,hostfwd=tcp:127.0.0.1:2222-:22  ^
+   -device virtio-net-pci,netdev=net0
+```
 
  ## Portable Layout
 
