@@ -3,25 +3,37 @@ Mutlak değer ve işaret fonksiyonu tanımları yerine yazılıp üs kuralları 
 Böylece signed power fonksiyonu, yalnızca çarpma ve üs alma işlemleriyle ifade edilebilir.
 
 $$
-\operatorname{spow}(x) = |x|^n \cdot \operatorname{sign}(x) \\[10pt]
+spow(x) = |x|^n \cdot sign(x)
+$$
 
-\operatorname{sign}(x) = \frac{x}{|x|} \\[10pt]
+$$
+sign(x) = \frac{x}{|x|}
+$$
 
-\operatorname{spow}(x) = \frac{|x|^n}{|x|}\cdot x \\[10pt]
+$$
+spow(x) = \frac{|x|^n}{|x|}\cdot x
+$$
 
-|x| = (x^2)^{\frac{1}{2}} \\[10pt]
+$$
+|x| = (x^2)^{\frac{1}{2}}
+$$
 
-\operatorname{spow}(x) = \frac{(x^2)^{\frac{n}{2}}}{(x^2)^{\frac{1}{2}}}\cdot x \\[10pt]
+$$
+spow(x) = \frac{(x^2)^{\frac{n}{2}}}{(x^2)^{\frac{1}{2}}}\cdot x
+$$
 
-\operatorname{spow}(x) = (x^2)^{\frac{n-1}{2}}\cdot x \\[10pt]
+$$
+spow(x) = (x^2)^{\frac{n-1}{2}}\cdot x
+$$
 
+$$
 p = \frac{n-1}{2}
 $$
 
 p değeri bir reel değer olarak alındığında:
 
 $$
-\boxed{\operatorname{spow}(x) = x\cdot(x\cdot x)^p}
+\boxed{spow(x) = x\cdot(x\cdot x)^p}
 $$
 
 
